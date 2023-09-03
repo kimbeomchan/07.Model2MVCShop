@@ -43,14 +43,6 @@ public class UserController {
 	int pageSize;
 	
 	
-	@RequestMapping("/addUserView.do")
-	public String addUserView() throws Exception {
-
-		System.out.println("/addUserView.do");
-		
-		return "redirect:/user/addUserView.jsp";
-	}
-	
 	//@RequestMapping("/addUserView.do")
 	@RequestMapping( value="addUser", method=RequestMethod.GET )
 	public String addUser() throws Exception {

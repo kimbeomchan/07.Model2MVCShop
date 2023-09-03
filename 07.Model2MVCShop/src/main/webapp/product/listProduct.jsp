@@ -23,7 +23,7 @@
 
 <div style="width:98%; margin-left:10px;">
 
-<form name="detailForm" action="/listProduct.do?menu=${menu}" method="post">
+<form name="detailForm" action="/product/listProduct?menu=${menu}" method="post">
 
 <table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
 	<tr>
@@ -112,10 +112,10 @@
 		<td></td>
 		<td align="left">
 			<c:if test="${menu.equals('search')}" >
-				<a href="/getProduct.do?prodNo=${vo.prodNo}&menu=${menu}">${vo.prodName}</a>
+				<a href="/product/getProduct?prodNo=${vo.prodNo}&menu=${menu}">${vo.prodName}</a>
 			</c:if>
 			<c:if test="${menu.equals('manage')}" >
-				<a href="/updateProductView.do?prodNo=${vo.prodNo}&menu=${menu}">${vo.prodName}</a>
+				<a href="/product/updateProductView?prodNo=${vo.prodNo}&menu=${menu}">${vo.prodName}</a>
 			</c:if>
 		</td>
 		<td></td>
@@ -131,7 +131,7 @@
 				</c:if>
 				<c:if test="${vo.proTranCode.trim() == '1'}" >
 					구매완료
-					<a href="/updateTranCode.do?prodNo=${vo.prodNo}&tranCode=2&currentPage=${resultPage.currentPage}">배송하기</a>
+					<a href="/purchase/updateTranCode?prodNo=${vo.prodNo}&tranCode=2&currentPage=${resultPage.currentPage}">배송하기</a>
 				</c:if>
 				<c:if test="${vo.proTranCode.trim() == '2'}" >
 					배송중
